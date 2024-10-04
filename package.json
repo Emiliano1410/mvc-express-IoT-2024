@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -11,5 +12,15 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.11.1",
+    "globals": "^15.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.0"
   }
 }
