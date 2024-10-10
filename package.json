@@ -10,10 +10,16 @@
     "start": "node dist/index.js",
     "dev": "nodemon"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "node",
+    "express",
+    "typescript",
+    "eslint",
+    "prettier"
+  ],
+  "author": "Emiliano Camacho Ponce",
+  "license": "MIT",
+  "description": "Proyecto completo con express para la materia de IoT para Base de Datos",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.0"
