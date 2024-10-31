@@ -1,4 +1,3 @@
-// routes/usuarios.ts
 import { Router } from "express";
 import {
   createStudent,
@@ -9,7 +8,6 @@ import {
 
 const router = Router();
 
-// Regresa todos los alumnos en la base de datos
 router.get("/", getStudents);
 
 router.post("/", createStudent);
