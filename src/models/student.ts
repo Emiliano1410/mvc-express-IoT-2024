@@ -1,11 +1,30 @@
 import pool from "../db";
 import { ResultSetHeader, RowDataPacket } from "mysql2/promise";
-import { Student } from "../interfaces/student";
+import { PaginatedStudent, Student } from "../interfaces/student";
 
 // Obtener todos los alumnos
-export const findAllStudents = async (): Promise<Student[]> => {
-  const [rows] = await pool.query<RowDataPacket[]>("SELECT * FROM students");
-  return rows as Student[];
+export const findAllStudents = async (
+  limit: number,
+  offset: number,
+): Promise<PaginatedStudent> => {
+  const [rows] = await pool.query<RowDataPacket[]>(
+    "SELECT * FROM students LIMIT ? OFFSET ?",
+    [limit, offset],
+  );
+  // Consulta para obtener el total de registros
+  const [totalRows] = (await pool.query(
+    "SELECT COUNT(*) as count FROM students",
+  )) as [{ count: number }[], unknown];
+  const total = totalRows[0].count;
+  // Calcular el total de páginas
+  const totalPages = Math.ceil(total / limit);
+  return {
+    page: offset / limit + 1,
+    limit,
+    total,
+    totalPages,
+    data: rows as Student[],
+  };
 };
 
 export const insertStudent = async (student: Student): Promise<Student> => {
