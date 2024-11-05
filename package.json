@@ -7,7 +7,8 @@
     "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start:render": "node dist/index.js",
     "dev": "nodemon"
   },
   "keywords": [
@@ -23,6 +24,7 @@
   "dependencies": {
     "date": "^2.0.5",
     "dotenv": "^16.4.5",
+    "dotenv-flow": "^4.1.0",
     "express": "^4.21.0",
     "mysql2": "^3.11.3",
     "zod": "^3.23.8"
@@ -32,6 +34,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.5",
+    "cross-env": "^7.0.3",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
