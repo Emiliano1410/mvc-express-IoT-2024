@@ -56,7 +56,7 @@ Ideal para desarrolladores que buscan una base sólida y bien estructurada para 
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/JuanMaLR/mvc-express-IoT-2024.git
+git clone https://github.com/Emiliano1410/mvc-express-IoT-2024.git
 cd mvc-express-IoT-2024
 ```
 
